@@ -1,6 +1,10 @@
 # Color Generator
 General purpose random color generator
 
+[![Build Status](https://travis-ci.org/kgbph/color-generator.svg?branch=master)](https://travis-ci.org/kgbph/color-generator)
+[![License](https://img.shields.io/github/license/kgbph/color-generator.svg?style=popout)](https://github.com/kgbph/color-generator/blob/master/LICENSE)
+[![](https://img.shields.io/github/release/kgbph/color-generator.svg)](https://github.com/kgbph/color-generator/releases)
+
 ## Setup
  - Download `color-generator.js`.
  - Include it in your project.
