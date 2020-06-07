@@ -1,0 +1,19 @@
+---
+kind: pipeline
+type: docker
+name: publish
+steps:
+  - name: build
+    image: node:latest
+    commands:
+      - npm ci
+      - npm run build
+  - name: release
+    image: plugins/github-release
+    settings:
+      api_key:
+        from_secret: GITHUB_TOKEN
+      files: dist/*
+trigger:
+  event:
+    - tag

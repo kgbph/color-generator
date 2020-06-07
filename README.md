@@ -1,34 +1,36 @@
 # Color Generator
 General purpose random color generator
 
-[![Build Status](https://travis-ci.org/kgbph/color-generator.svg?branch=master)](https://travis-ci.org/kgbph/color-generator)
+[![Build Status](https://cloud.drone.io/api/badges/kgbph/color-generator/status.svg)](https://cloud.drone.io/kgbph/color-generator)
 [![License](https://img.shields.io/github/license/kgbph/color-generator.svg?style=popout)](https://github.com/kgbph/color-generator/blob/master/LICENSE)
 [![](https://img.shields.io/github/release/kgbph/color-generator.svg)](https://github.com/kgbph/color-generator/releases)
 
-## Setup
- - Download `color-generator.js`.
- - Include it in your project.
+## Usage
+ - Download [color-generator.js](https://github.com/kgbph/color-generator/releases/latest).
+ - Load script.
 
     ``` html
-    <script src="path_to_file/color-generator.js"></script>
+    <script src="color-generator.js"></script>
     ```
-
-## Usage
  - Instantiate `ColorGenerator` object.
 
     ``` javascript
     var colorGenerator = new ColorGenerator();
     ```
 
- - Generate color.
+ - Generate color (RGB).
  
     ``` javascript
-    var color = colorGenerator.generateColor();
+    var color = colorGenerator.generateRGB();
+    // rgb(xxx, xxx, xxx)
     ```
 
-## Notes
- - The color generated is `rgb(r, g, b)` formatted string.
- - It is recommended to use the same object to generate subsequent colors.
+ - Generate color (Hex).
+ 
+    ``` javascript
+    var color = colorGenerator.generateHex();
+    // #XXXXXX
+    ```
 
 ## License
 Color Generator is MIT licensed, as found in the LICENSE file.
