@@ -1,7 +1,7 @@
 ---
 kind: pipeline
 type: docker
-name: publish
+name: default
 steps:
   - name: build
     image: node:latest
@@ -14,6 +14,6 @@ steps:
       api_key:
         from_secret: GITHUB_TOKEN
       files: dist/*
-trigger:
-  event:
-    - tag
+    when:
+      event:
+        - tag

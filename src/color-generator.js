@@ -3,7 +3,7 @@
 /**
  * Color generator class
  */
-exports.ColorGenerator = class ColorGenerator {
+export default class {
 
     /**
      * Class constructor
