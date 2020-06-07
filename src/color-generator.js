@@ -1,7 +1,9 @@
+'use strict';
+
 /**
  * Color generator class
  */
-module.exports = class ColorGenerator {
+exports.ColorGenerator = class ColorGenerator {
 
     /**
      * Class constructor
