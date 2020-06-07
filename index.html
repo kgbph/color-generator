@@ -1,95 +1,111 @@
 <!doctype html>
 <html class="no-js" lang="en-us">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <meta name="author" content="Kevin Bernardo">
-        <meta name="description" content="kgbph color generator">
-        <meta name="keywords" content="kgb, kgbph, color-generator">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-        <title>
-            kgbph/color-generator
-        </title>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="author" content="Kevin Bernardo">
+  <meta name="description" content="kgbph color generator">
+  <meta name="keywords" content="kgb, kgbph, color-generator">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-        <link rel="icon" href="img/favicon.ico" type="image/x-icon" />
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
-        <link rel="stylesheet" href="css/style.css">
-    </head>
+  <title>
+    kgbph/color-generator
+  </title>
 
-    <body>
-        <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
-            <a class="navbar-brand" href="/">
-                kgbph
-            </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarCollapse">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#main">
-                            Color Generator
-                            <span class="sr-only">
-                                (current)
-                            </span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#examples">
-                            Examples
-                        </a>
-                    </li>
-                </ul>
+  <link rel="icon" href="img/favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css"
+    integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
+    <a class="navbar-brand" href="/">
+      kgbph
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+      aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#main">
+            Color Generator
+            <span class="sr-only">
+              (current)
+            </span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#examples">
+            Examples
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <main role="main" class="container">
+    <section id="main">
+      <h1>Color Generator</h1>
+      <hr>
+      <p>General purpose random color generator</p>
+      <p>
+        <a href="https://travis-ci.org/kgbph/color-generator"><img
+            src="https://travis-ci.org/kgbph/color-generator.svg?branch=master" alt="Build Status" /></a>
+        <a href="https://github.com/kgbph/color-generator/blob/master/LICENSE"><img
+            src="https://img.shields.io/github/license/kgbph/color-generator.svg?style=popout" alt="License" /></a>
+        <a href="https://github.com/kgbph/color-generator/releases"><img
+            src="https://img.shields.io/github/release/kgbph/color-generator.svg" alt="" /></a>
+      </p>
+    </section>
+
+    <section id="examples">
+      <h1>Examples</h1>
+      <hr>
+      <div class="row">
+        <div class="col-md-3">
+          <form id="frmGenerateColor">
+            <div class="input-group mb-3">
+              <input id="inpSampleCount" type="number" min="1" step="1" value="1" class="form-control"
+                placeholder="Number of colors to generate">
+              <div class="input-group-append">
+                <button id="btnGenerateColor" class="btn btn-primary" type="submit">
+                  Generate
+                </button>
+              </div>
             </div>
-        </nav>
+          </form>
+        </div>
+      </div>
+      <div id="divSandbox" class="card-columns">
+      </div>
+    </section>
+  </main>
 
-        <main role="main" class="container">
-            <section id="main">
-                <h1>Color Generator</h1>
-                <hr>
-                <p>General purpose random color generator</p>
-                <p>
-                    <a href="https://travis-ci.org/kgbph/color-generator"><img src="https://travis-ci.org/kgbph/color-generator.svg?branch=master" alt="Build Status" /></a>
-                    <a href="https://github.com/kgbph/color-generator/blob/master/LICENSE"><img src="https://img.shields.io/github/license/kgbph/color-generator.svg?style=popout" alt="License" /></a>
-                    <a href="https://github.com/kgbph/color-generator/releases"><img src="https://img.shields.io/github/release/kgbph/color-generator.svg" alt="" /></a>
-                </p>
-            </section>
+  <template id="divColorSample">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">
+        </h5>
+      </div>
+    </div>
+  </template>
 
-            <section id="examples">
-                <h1>Examples</h1>
-                <hr>
-                <div class="row">
-                    <div class="col-md-3">
-                        <div class="input-group mb-3">
-                            <input id="inpSampleCount" type="number" min="1" step="1" value="1" class="form-control" placeholder="Number of colors to generate">
-                            <div class="input-group-append">
-                                <button id="btnGenerateColor" class="btn btn-primary" type="button">
-                                    Generate
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div id="divSandbox" class="card-columns">
-                </div>
-            </section>
-        </main>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+    integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js"
+    integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  <script src="js/color-generator.js"></script>
+  <script src="js/script.js"></script>
+</body>
 
-        <template id="divColorSample">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">
-                    </h5>
-                </div>
-            </div>
-        </template>
-
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/vue"></script>
-        <script src="js/color-generator.js"></script>
-        <script src="js/script.js"></script>
-    </body>
 </html>
